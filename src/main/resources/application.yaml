@@ -5,3 +5,5 @@ spring:
         consumer-in-0:
           destination: consumer
           group: consumer-group
+  kafka:
+    bootstrap-servers: localhost:9092
