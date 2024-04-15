@@ -1,0 +1,14 @@
+spring:
+  cloud:
+    function:
+      definition: consumer;function
+    stream:
+      bindings:
+        consumer-in-0:
+          destination: input-topic
+          group: consumer-group
+        function-in-0:
+          destination: input-topic
+          group: consumer-group
+  kafka:
+    bootstrap-servers: localhost:9092

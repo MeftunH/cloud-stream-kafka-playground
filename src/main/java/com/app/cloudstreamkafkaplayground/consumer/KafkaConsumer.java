@@ -16,14 +16,14 @@ public class KafkaConsumer {
     @Bean
     public Consumer<Flux<String>> consumer() {
         return flux -> flux.doOnNext(record -> {
-            logger.info("Received: " + record);
+            logger.info("Consumer Received: " + record);
         }).subscribe();
     }
 
     @Bean
     public Function<Flux<String>, Mono<Void>> consumer2() {
         return flux -> flux.doOnNext(record -> {
-            logger.info("Received: " + record);
+            logger.info("Function Received: " + record);
         }).then();
     }
 }
